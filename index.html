@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Anthony Mero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --accent: #0ea5e9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 3rem;
+    }
+
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      background: linear-gradient(to right, var(--accent), var(--primary));
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--primary);
+      padding-left: 1rem;
+    }
+
+    ul.skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      list-style: none;
+    }
+
+    ul.skills-list li {
+      background: var(--card);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .project {
+      background: var(--card);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact p {
+      margin: 0.4rem 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-theme {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card);
+      color: var(--text);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .toggle-theme {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-theme" onclick="toggleTheme()">Cambiar tema</button>
+  <header>
+    <h1>Gonzalo Mero</h1>
+    <p>Desarrollador Web Full Stack | Especialista en sitios personalizados y sistemas web</p>
+  </header>
+
+  <main>
+    <section class="section about">
+      <h2 class="section-title">Sobre mí</h2>
+      <p>Soy desarrollador web con experiencia en la creación de soluciones digitales adaptadas a negocios, emprendedores y empresas. Combino diseño moderno, funcionalidad práctica e integración con bases de datos para crear sitios y plataformas profesionales que generan resultados reales.</p>
+    </section>
+
+    <section class="section skills">
+      <h2 class="section-title">Lenguajes y Tecnologías</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>Python</li>
+        <li>Flask</li>
+        <li>Git</li>
+      </ul>
+    </section>
+
+    <section class="section projects">
+      <h2 class="section-title">Proyectos Destacados</h2>
+
+      <div class="project" onclick="openProject('https://unify-ejemplo.com')">
+        <h3>Unify - Red Social</h3>
+        <p>Desarrollé una red social tipo Facebook con sistema de amistad (confirmar/rechazar), buscador de usuarios en tiempo real, notificaciones, perfil de usuario y base de datos en PHP/MySQL.</p>
+      </div>
+
+      <div class="project" onclick="openProject('https://notificaciones-ejemplo.com')">
+        <h3>Notificaciones tipo Facebook</h3>
+        <p>Sistema de notificaciones en tiempo real con HTML, CSS, JavaScript y conexión a base de datos. Muestra alertas nuevas al usuario y permite marcarlas como leídas.</p>
+      </div>
+
+      <div class="project" onclick="openProject('https://portafolios-negocios.com')">
+        <h3>Portafolios y páginas para negocios</h3>
+        <p>He diseñado múltiples sitios web profesionales para emprendedores (barberías, tiendas, restaurantes), con enfoque en diseño responsivo, velocidad y fácil contacto por Instagram y WhatsApp.</p>
+      </div>
+
+      <div class="project" onclick="openProject('https://login-rgb.com')">
+        <h3>Login RGB Minimalista</h3>
+        <p>Diseño atractivo y moderno de pantalla de inicio de sesión con ambiente oscuro, efectos RGB y animaciones visuales personalizadas.</p>
+      </div>
+
+      <div class="project" onclick="openProject('https://tienda-ecommerce.com')">
+        <h3>Tienda online tipo ecommerce</h3>
+        <p>Página web moderna tipo ecommerce para vender plantillas y sitios web. Integración con botones de contacto, presentación visual de productos y diseño atractivo.</p>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <h2 class="section-title">Contacto</h2>
+      <p>Email: <a href="mailto:gonzalomero990@gmail.com">gonzalomero990@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/593000000000">+593 979 716 211</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/gonz.a9623">@gonz.a9623</a></p>
+    </section>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      if (root.style.getPropertyValue('--bg') === '#0f172a') {
+        root.style.setProperty('--bg', '#f8fafc');
+        root.style.setProperty('--card', '#e2e8f0');
+        root.style.setProperty('--text', '#0f172a');
+        root.style.setProperty('--accent', '#2563eb');
+      } else {
+        root.style.setProperty('--bg', '#0f172a');
+        root.style.setProperty('--card', '#1e293b');
+        root.style.setProperty('--text', '#f8fafc');
+        root.style.setProperty('--accent', '#0ea5e9');
+      }
+    }
+
+    function openProject(url) {
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
